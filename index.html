@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Intelligence & Analytics</title>
+    <title>BOT Data Intelligence Centre</title>
     <style>
         /* General Styles */
         body {
@@ -40,107 +40,111 @@
             text-align: center;
         }
 
+        /* Page Sections */
+        section {
+            display: none;
+            padding: 20px;
+        }
+
         /* Home Page Styles */
-        #hero {
-            background-color: #f0f0f0;
-            padding: 100px 0;
-            text-align: center;
+        #home {
+            display: block;
         }
-        #hero h1 {
-            margin-bottom: 20px;
-            font-size: 36px;
-        }
-        #hero p {
-            font-size: 18px;
-        }
-
-        /* Features Section */
-        #features {
-            margin-top: 50px;
-            text-align: center;
-        }
-        .feature {
-            margin-bottom: 20px;
-        }
-        .feature h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .feature p {
-            font-size: 16px;
-        }
-
-        /* Contact Section */
+        
+        /* Contact Page Styles */
         #contact {
-            margin-top: 50px;
-            text-align: center;
+            background-color: #f0f0f0;
         }
-        #contact form input[type="text"],
-        #contact form input[type="email"],
-        #contact form textarea {
-            width: 100%;
-            margin-bottom: 10px;
-            padding: 10px;
-            box-sizing: border-box;
+
+        /* Consultant Page Styles */
+        #consultant {
+            background-color: #f0f0f0;
         }
-        #contact form textarea {
-            height: 150px;
+
+        /* Partner Page Styles */
+        #partner {
+            background-color: #f0f0f0;
         }
-        #contact form button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
+
+        /* Newsletter Page Styles */
+        #newsletter {
+            background-color: #f0f0f0;
         }
+
     </style>
 </head>
 <body>
     <header>
-        <h1>Data Intelligence & Analytics</h1>
+        <h1>Welcome to My GitHub.io Website</h1>
         <nav>
             <ul>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="#consultant">Consultant</a></li>
+                <li><a href="#partner">Partner</a></li>
+                <li><a href="#newsletter">Weekly Newsletter</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <h1>Welcome to Our Data Intelligence Platform</h1>
-            <p>Unlock the power of your data with our advanced analytics tools.</p>
-        </section>
-
-        <section id="features">
-            <h2>Key Features</h2>
-            <div class="feature">
-                <h2>Data Visualization</h2>
-                <p>Transform your data into beautiful and insightful visualizations.</p>
-            </div>
-            <div class="feature">
-                <h2>Predictive Analytics</h2>
-                <p>Utilize machine learning algorithms to predict future trends.</p>
-            </div>
-            <div class="feature">
-                <h2>Data Security</h2>
-                <p>Ensure the confidentiality and integrity of your data with our robust security measures.</p>
-            </div>
+        <section id="home">
+            <h2>Home Page</h2>
+            <p>This is the home page of my GitHub.io website.</p>
         </section>
 
         <section id="contact">
             <h2>Contact Us</h2>
+            <p>Fill out the form below to get in touch with us:</p>
+            <iframe src="https://docs.google.com/forms/d/e/your_form_id/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+
+        <section id="consultant">
+            <h2>Consultant Inquiry</h2>
+            <p>Interested in becoming a consultant with us? Fill out the form below:</p>
+            <iframe src="https://docs.google.com/forms/d/e/your_form_id/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+
+        <section id="partner">
+            <h2>Partner With Us</h2>
+            <p>Interested in partnering with us? Fill out the form below:</p>
+            <iframe src="https://docs.google.com/forms/d/e/your_form_id/viewform?embedded=true" width="640" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </section>
+
+        <section id="newsletter">
+            <h2>Weekly Newsletter</h2>
+            <p>Subscribe to our weekly newsletter:</p>
             <form action="#" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <button type="submit">Subscribe</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Data Intelligence & Analytics. All rights reserved.</p>
+        <p>&copy; 2024 My GitHub.io Website. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll("nav ul li a");
+
+            navLinks.forEach(function(link) {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute("href").substring(1);
+                    sections.forEach(function(section) {
+                        if (section.getAttribute("id") === targetId) {
+                            section.style.display = "block";
+                        } else {
+                            section.style.display = "none";
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
